@@ -4,7 +4,7 @@
 Rip will run any program you like in parallel. It starts as many processes as you like and lets you define the arguments for the program.
 
 ## Build
-To build, you need a running copy of [Go](http://golang.org). Then just buid by using:
+To build, you need a running copy of [Go](http://golang.org). Then just build by using:
 ```
 go build rip.go
 ```
