@@ -18,5 +18,5 @@ hello from 2
 hello from 1
 ```
 - `-n 3` number of processes to start
-- `-c date` program to start
-- `-- _seed_` arguments given to program have to be behind `--`, `_seed_` is replaced by the process number
+- `-c echo` program to start
+- `-- hello from _seed_` arguments given to program have to be behind `--`, `_seed_` is replaced by the process number
