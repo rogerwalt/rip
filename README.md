@@ -19,4 +19,4 @@ hello from 1
 ```
 - `-n 3` number of processes to start
 - `-c date` program to start
-- `-- _seed_` arguments given to program have to be behind `--`. `_seed_` is replaced by the process number
+- `-- _seed_` arguments given to program have to be behind `--`, `_seed_` is replaced by the process number
