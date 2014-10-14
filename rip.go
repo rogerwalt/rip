@@ -11,8 +11,8 @@ import (
 
 func checkError(err error) {
 	if err != nil {
-        log.Fatalf("Error: %s", err)
-    }
+		log.Fatalf("Error: %s", err)
+	}
 }
 
 func main() {
@@ -48,23 +48,23 @@ func main() {
 		}
 
 		// the tail is given as arguments to the command which is run
-	    cmd := exec.Command(*wordCmd, args...)
+		cmd := exec.Command(*wordCmd, args...)
 
-	    // create stdout, stderr streams of type io.Reader
-	    stdout, err := cmd.StdoutPipe()
-	    checkError(err)
-	    stderr, err := cmd.StderrPipe()
-	    checkError(err)
+		// create stdout, stderr streams of type io.Reader
+		stdout, err := cmd.StdoutPipe()
+		checkError(err)
+		stderr, err := cmd.StderrPipe()
+		checkError(err)
 
-	    // non-blockingly echo command output to terminal
-	    go io.Copy(os.Stdout, stdout)
-	    go io.Copy(os.Stderr, stderr)
+		// non-blockingly echo command output to terminal
+		go io.Copy(os.Stdout, stdout)
+		go io.Copy(os.Stderr, stderr)
 
-	    // start command
-	    err = cmd.Start()
-	    checkError(err)
+		// start command
+		err = cmd.Start()
+		checkError(err)
 
-	    // don't let main() exit before our command has finished running
-	    defer cmd.Wait()  // doesn't block
+		// don't let main() exit before our command has finished running
+		defer cmd.Wait()  // doesn't block
 	}
 }
